@@ -95,6 +95,8 @@ function checkUnit(unitToCheck) {
 	validUnitTypes.set("FAHRENHEIT", ["F", "FAHRENHEIT"]);
 	validUnitTypes.set("CELCIUS", ["C", "CELCIUS", "CENTIGRADE"]);
 	validUnitTypes.set("KELVIN", ["K", "KELVIN"]);
+	validUnitTypes.set("KILOGRAMS", ["KG", "KILOGRAM", "KILOGRAMS"]);
+	validUnitTypes.set("POUNDS", ["LB", "LBS", "POUND", "POUNDS"]);
 	
 	var valid = false;
 	for (var unitType of validUnitTypes.values()) {
@@ -302,7 +304,20 @@ function convert(value, fromUnit, toUnit) {
 					break;
 			}
 			break;
-
+		case "KILOGRAMS":
+			switch(toUnit) {
+				case "POUNDS":
+					converted *= 2.20462;
+					break;
+			}
+			break;
+		case "POUNDS":
+			switch(toUnit) {
+				case "KILOGRAMS":
+					converted *= 0.453592;
+					break;
+			}
+			break;
 	}
 	return converted;
 }
