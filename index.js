@@ -19,7 +19,7 @@ client.on('message', message => {
 			});
 			message.channel.send(help_data);
 		}
-		if (command === "spook") {
+		else if (command === "spook") {
 			message.channel.send("https://www.youtube.com/watch?v=veoRPdSNdhk");
 		}
 		else if (command === "what's good?") {
