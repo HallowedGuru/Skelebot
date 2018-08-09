@@ -13,5 +13,5 @@ Commands:
 		!skel convert 25 meters to feet
 		!skel convert 100 mph to km/h
 		!skel convert 30C to F
-	*Note that provided units are /not/ case sensitve. For a full list of valid units for conversion, use the "!skel units" command.
+	*Note that provided units are /not/ case sensitive. For a full list of valid units for conversion, use the "!skel units" command.
 ```

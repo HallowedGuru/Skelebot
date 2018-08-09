@@ -2,14 +2,14 @@
 Units:
 	-Distance
 		*Millimeters: Can be written as mm, millimeter, or millimeters
-		*Centiimeters: Can be written as cm, centimeter, or centimeters
+		*Centimeters: Can be written as cm, centimeter, or centimeters
 		*Meters: Can be written as m, meter, or meters
 		*Kilometers: Can be written as km, kilometer, or kilometers
 		*Inches: Can be written as in, inch, or inches
 		*Feet: Can be written as ft, foot, or feet
 		*Miles: Can be written as mi, mile, or miles
 	-Velocity
-		*Kilometes Per Hour: Can be written as km/h, kmph, kilometer per hour, or kilometers per hour
+		*Kilometers Per Hour: Can be written as km/h, kmph, kilometer per hour, or kilometers per hour
 		*Miles Per Hour: Can be written as mi/h, mph, miph, mile per hour, or miles per hour
 		*Knots: Can be written as kt, knot, or knots
 	-Weight
