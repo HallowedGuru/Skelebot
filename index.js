@@ -7,16 +7,13 @@ client.on('ready', () => {
 
 client.login(process.env.BOT_TOKEN);
 
+var fs = require("fs");
+
 client.on('message', message => {
 	if (message.content.startsWith("!skel ")) {
 		var command = message.content.substring(6).trim();
 		if (command === "help") {
-			var fs = require("fs");
-			var help_data;
-			fs.readFile("help.txt", "UTF8", function(err, data) {
-    		if (err) { throw err };
-    			help_data = data;
-			});
+			var help_data = fs.readFileSync("help.txt").toString();
 			message.channel.send(help_data);
 		}
 		else if (command === "spook") {

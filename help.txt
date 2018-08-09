@@ -1,1 +1,1 @@
-"```Commands: \n - Random ('!skel random [min], [max]'): Generates a random number between the min and max values given.```"
+```Commands: \n - Random ('!skel random [min], [max]'): Generates a random number between the min and max values given.```
