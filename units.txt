@@ -1,0 +1,23 @@
+```
+Units:
+	-Distance
+		*Millimeters: Can be written as mm, millimeter, or millimeters
+		*Centiimeters: Can be written as cm, centimeter, or centimeters
+		*Meters: Can be written as m, meter, or meters
+		*Kilometers: Can be written as km, kilometer, or kilometers
+		*Inches: Can be written as in, inch, or inches
+		*Feet: Can be written as ft, foot, or feet
+		*Miles: Can be written as mi, mile, or miles
+	-Velocity
+		*Kilometes Per Hour: Can be written as km/h, kmph, kilometer per hour, or kilometers per hour
+		*Miles Per Hour: Can be written as mi/h, mph, miph, mile per hour, or miles per hour
+		*Knots: Can be written as kt, knot, or knots
+	-Weight
+		*Kilograms: Can be written as kg, kilogram, or kilograms
+		*Pounds: Can be written as lb, lbs, pound, or pounds
+	-Temperature
+		*Celcius: Can be written as c, celcius, or centigrade
+		*Fahrenheit: Can be written as f or fahrenheit
+		*Kelvin: Can be written as k or kelvin
+Note that units provided to the "convert" command are /not/ case sensitive. They can be all caps, all lower case, or any combination.
+```

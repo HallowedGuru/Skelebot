@@ -16,6 +16,10 @@ client.on('message', message => {
 			var help_data = fs.readFileSync("help.txt").toString();
 			message.channel.send(help_data);
 		}
+		if (command === "units") {
+			var units_data = fs.readFileSync("units.txt").toString();
+			message.channel.send(units_data);
+		}
 		else if (command === "spook") {
 			message.channel.send("https://www.youtube.com/watch?v=veoRPdSNdhk");
 		}
@@ -105,7 +109,7 @@ function checkUnit(unitToCheck) {
 	validUnitTypes.set("POUNDS", ["LB", "LBS", "POUND", "POUNDS"]);
 	validUnitTypes.set("KILOMETERS PER HOUR", ["KM/H", "KMPH", "KILOMETER PER HOUR", "KILOMETERS PER HOUR"]);
 	validUnitTypes.set("MILES PER HOUR", ["MI/H", "MPH", "MIPH", "MILE PER HOUR", "MILES PER HOUR"]);
-	validUnitTypes.set("KNOTS", ["KN", "KNOT", "KNOTS", "POUNDS"]);
+	validUnitTypes.set("KNOTS", ["KN", "KNOT", "KNOTS"]);
 	
 	var valid = false;
 	for (var unitType of validUnitTypes.values()) {
