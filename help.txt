@@ -1,4 +1,5 @@
-```Commands: 
+```http
+Commands: 
 - <b>random</b> (!skel random [min], [max]): Generates a random number between the min and max values given.
 <i>Example: !skel random 1, 10</i>
 - <b>coinflip</b> (!skel coinflip): Flips a coin.
