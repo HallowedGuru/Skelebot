@@ -1,13 +1,13 @@
 ```Commands: 
-- *random* (!skel random [min], [max]): Generates a random number between the min and max values given.
-**Example: !skel random 1, 10**
-- *coinflip* (!skel coinflip): Flips a coin.
-- *pick* (!skel pick [list of items]): Picks a random item from a provided list.
-**Example: !skel pick something, something else, another thing**
-- *convert* (!skel convert [amount] [unit to convert from] to [unit to convert to]): Converts a value from one unit to another.
-**Examples: 
+- <b>random</b> (!skel random [min], [max]): Generates a random number between the min and max values given.
+<i>Example: !skel random 1, 10</i>
+- <b>coinflip</b> (!skel coinflip): Flips a coin.
+- <b>pick</b> (!skel pick [list of items]): Picks a random item from a provided list.
+<i>Example: !skel pick something, something else, another thing</i>å
+- <b>convert</b> (!skel convert [amount] [unit to convert from] to [unit to convert to]): Converts a value from one unit to another.
+<i>Examples: 
 !skel convert 25 meters to feet
 !skel convert 100 mph to km/h
-!skel convert 30C to F**
-***Note that provided units are not case sensitve. For a full list of valid units for conversion, use the "!skel units" command***
+!skel convert 30C to F</i>
+<b><i>Note that provided units are not case sensitve. For a full list of valid units for conversion, use the "!skel units" command</b></i>
 ```
