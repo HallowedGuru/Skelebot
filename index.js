@@ -16,7 +16,7 @@ client.on('message', message => {
 			var help_data = fs.readFileSync("help.txt").toString();
 			message.channel.send(help_data);
 		}
-		if (command === "units") {
+		else if (command === "units") {
 			var units_data = fs.readFileSync("units.txt").toString();
 			message.channel.send(units_data);
 		}
