@@ -97,6 +97,9 @@ function checkUnit(unitToCheck) {
 	validUnitTypes.set("KELVIN", ["K", "KELVIN"]);
 	validUnitTypes.set("KILOGRAMS", ["KG", "KILOGRAM", "KILOGRAMS"]);
 	validUnitTypes.set("POUNDS", ["LB", "LBS", "POUND", "POUNDS"]);
+	validUnitTypes.set("KILOMETERS PER HOUR", ["KM/H", "KMPH", "KILOMETER PER HOUR", "KILOMETERS PER HOUR"]);
+	validUnitTypes.set("MILES PER HOUR", ["MI/H", "MPH", "MIPH", "MILE PER HOUR", "MILES PER HOUR"]);
+	validUnitTypes.set("KNOTS", ["KN", "KNOT", "KNOTS", "POUNDS"]);
 	
 	var valid = false;
 	for (var unitType of validUnitTypes.values()) {
@@ -315,6 +318,36 @@ function convert(value, fromUnit, toUnit) {
 			switch(toUnit) {
 				case "KILOGRAMS":
 					converted *= 0.453592;
+					break;
+			}
+			break;
+		case "KILOMETES PER HOUR":
+			switch(toUnit) {
+				case "MILES PER HOUR":
+					converted *= 0.621371;
+					break;
+				case "KNOTS":
+					converted *= 0.539957;
+					break;
+			}
+			break;
+		case "MILES PER HOUR":
+			switch(toUnit) {
+				case "KILOMETERS PER HOUR":
+					converted *= 1.60934;
+					break;
+				case "KNOTS":
+					converted *= 0.868976;
+					break;
+			}
+			break;
+		case "KNOTS":
+			switch(toUnit) {
+				case "KILOMETERS PER HOUR":
+					converted *= 1.852;
+					break;
+				case "MILES PER HOUR":
+					converted *= 1.15078;
 					break;
 			}
 			break;
