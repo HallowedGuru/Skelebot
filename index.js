@@ -10,6 +10,15 @@ client.login(process.env.BOT_TOKEN);
 client.on('message', message => {
 	if (message.content.startsWith("!skel ")) {
 		var command = message.content.substring(6).trim();
+		if (command === "help") {
+			var fs = require("fs");
+			var help_data;
+			fs.readFile("help.txt", "UTF8", function(err, data) {
+    		if (err) { throw err };
+    			help_data = data;
+			});
+			message.channel.send(help_data);
+		}
 		if (command === "spook") {
 			message.channel.send("https://www.youtube.com/watch?v=veoRPdSNdhk");
 		}
