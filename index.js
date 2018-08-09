@@ -5,7 +5,7 @@ client.on('ready', () => {
     console.log('Ready!');
 });
 
-client.login('process.env.BOT_TOKEN');
+client.login(process.env.BOT_TOKEN);
 
 client.on('message', message => {
 	if (message.content.startsWith("!skel ")) {
