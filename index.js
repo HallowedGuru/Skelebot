@@ -11,7 +11,7 @@ var fs = require("fs");
 
 client.on('message', message => {
 	message = message.toLowerCase();
-	if (message.content.startsWith("!skel " or "@skelebot#9801")) {
+	if (message.content.startsWith("!skel ") || message.content.startsWith("@skelebot#9801 ")) {
 		var command = message.content.substring(6).trim();
 		if (command === "help") {
 			var help_data = fs.readFileSync("help.txt").toString();
