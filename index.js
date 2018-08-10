@@ -21,7 +21,7 @@ client.on('message', message => {
 			message.channel.send(units_data);
 		}
 		else if (command === "spook") {
-			message.channel.send("https://www.youtube.com/watch?v=veoRPdSNdhk");
+			message.channel.send("https://www.youtube.com/watch?v=XTgFtxHhCQ0");
 		}
 		else if (command === "what's good?") {
 			message.channel.send("https://www.youtube.com/watch?v=hod0WtYE4SA");
