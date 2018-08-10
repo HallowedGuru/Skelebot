@@ -30,7 +30,7 @@ client.on('message', message => {
 		else if (command === "freak") {
 			message.channel.send("https://www.youtube.com/watch?v=pdQiSGb4Luw");
 		}
-		else if (command.startsWith(("ily ")) || command === ("ily")) {
+		else if (command.startsWith(("ily ")) || command === "ily") {
 			message.reply("ily2");
 		}
 		else if (command.startsWith("random ")) {
