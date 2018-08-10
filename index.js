@@ -29,6 +29,9 @@ client.on('message', message => {
 		else if (command === "freak") {
 			message.channel.send("https://www.youtube.com/watch?v=pdQiSGb4Luw");
 		}
+		else if (command === "ily") {
+			message.reply("ily2");
+		}
 		else if (command.startsWith("random ")) {
 			var values = command.substring(7).split(", ");
 			message.channel.send("Generating a random number between " + values[0] + " and " + values[1] + "...");
