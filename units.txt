@@ -19,7 +19,7 @@ Units:
 		*Pounds: Can be written as lb, lbs, pound, or pounds
 
 	-Temperature
-		*Celcius: Can be written as c, celcius, or centigrade
+		*Celsius: Can be written as c, celsius, or centigrade
 		*Fahrenheit: Can be written as f or fahrenheit
 		*Kelvin: Can be written as k or kelvin
 		

@@ -107,7 +107,7 @@ function checkUnit(unitToCheck) {
 	validUnitTypes.set("MILES", ["MI", "MILE", "MILES"]);
 	validUnitTypes.set("GALLONS", ["G", "GALLON", "GALLONS"]);
 	validUnitTypes.set("FAHRENHEIT", ["F", "FAHRENHEIT"]);
-	validUnitTypes.set("CELCIUS", ["C", "CELCIUS", "CENTIGRADE"]);
+	validUnitTypes.set("CELSIUS", ["C", "CELSIUS", "CENTIGRADE"]);
 	validUnitTypes.set("KELVIN", ["K", "KELVIN"]);
 	validUnitTypes.set("KILOGRAMS", ["KG", "KILOGRAM", "KILOGRAMS"]);
 	validUnitTypes.set("POUNDS", ["LB", "LBS", "POUND", "POUNDS"]);
@@ -293,7 +293,7 @@ function convert(value, fromUnit, toUnit) {
 			break;
 		case "FAHRENHEIT":
 			switch(toUnit) {
-				case "CELCIUS":
+				case "CELSIUS":
 					converted = (converted - 32)/1.8;
 					break;
 				case "KELVIN":
@@ -301,7 +301,7 @@ function convert(value, fromUnit, toUnit) {
 					break;
 			}
 			break;
-		case "CELCIUS":
+		case "CELSIUS":
 			switch(toUnit) {
 				case "FAHRENHEIT":
 					converted = (converted * 1.8) + 32;
@@ -316,7 +316,7 @@ function convert(value, fromUnit, toUnit) {
 				case "FAHRENHEIT":
 					converted = (converted * 5/9) - 459.67;
 					break;
-				case "CELCIUS":
+				case "CELSIUS":
 					converted -= 273.15;
 					break;
 			}
