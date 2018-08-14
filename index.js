@@ -10,7 +10,6 @@ client.login(process.env.BOT_TOKEN);
 var fs = require("fs");
 
 client.on('message', message => {
-	//message = message.toLowerCase();
 	if (message.content.startsWith("!skel ")) {
 		var command = message.content.substring(6).trim().toLowerCase();
 		if (command === "help") {
@@ -67,14 +66,23 @@ client.on('message', message => {
 			message.channel.send("Sorry, I don't recognize that command");
 		}
 	}
+	/*else if (message.content.contains("u up") || message.content.contains("uup")) {
+		message.delete();
+		message.channel.send("Don't say that.");
+
+	}*/
 });
 
+
+//Generates a random number between the min and max values provided (inclusive)
 function randomNumber(min, max) {
 	var diff = max - min;
 	var result = Math.floor((Math.random() * diff) + 1) + min;
 	return result.toString();
 }
 
+//Checks input provided to the convert command to assure that it is valid and properly formatted, and then separates the value, the unit to convert from,
+//and the unit to convert to into individual variables
 function checkConversionInput(valuesToCheck) {
 	if (valuesToCheck.length == 2) {
 		if ((valuesToCheck[0].match(/^\d/) && valuesToCheck[0].charAt(valuesToCheck[0].length-1).match(/\w/)) && 
@@ -94,6 +102,7 @@ function checkConversionInput(valuesToCheck) {
 	}
 }
 
+//Checks the units provided to assure they are valid
 function checkUnit(unitToCheck) {
 	var validUnitTypes = new Map();
 	validUnitTypes.set("METERS", ["M", "METER", "METERS"]);
@@ -117,22 +126,19 @@ function checkUnit(unitToCheck) {
 	
 	var valid = false;
 	for (var unitType of validUnitTypes.values()) {
-		console.log(unitType);
 		for (const unit of unitType) {
-			console.log("Unit given: " + unitToCheck + ", Unit type checked: "  + unit);
 			if (unitToCheck === unit) {
 				valid = true;
-				console.log("Unit type: " + getKeyByValue(validUnitTypes, unitType));
 				return getKeyByValue(validUnitTypes, unitType);
 			}
 		}
-		console.log("----------------------------");
 	}
 	if (valid = false) {
 		return "Unit not recognized";
 	}
 }
 
+//Performs conversion of the provided value from the fromUnit to the toUnit
 function convert(value, fromUnit, toUnit) {
 	var valid = true;
 	var converted = value;
@@ -369,6 +375,7 @@ function convert(value, fromUnit, toUnit) {
 	return converted;
 }
 
+//Gets the key of a key-value pair from a provided value
 function getKeyByValue(object, value) {
 	for (var key of object.keys()) {
 		if (object.get(key) === value) {
