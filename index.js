@@ -77,7 +77,7 @@ function randomNumber(min, max) {
 
 function checkConversionInput(valuesToCheck) {
 	if (valuesToCheck.length == 2) {
-		if ((valuesToCheck[0].match(/[-+]?([0-9]*\.[0-9]+|[0-9]+)/) && valuesToCheck[0].charAt(valuesToCheck[0].length-1).match(/\w/)) && 
+		if ((valuesToCheck[0].match(/^\d/) && valuesToCheck[0].charAt(valuesToCheck[0].length-1).match(/\w/)) && 
 			(valuesToCheck[1].charAt(valuesToCheck[1].length-1).match(/\w/))) {
 			var fromUnit = checkUnit(valuesToCheck[0].replace(/\d+/g, '').replace(/\s+/g, '').toUpperCase());
 			var toUnit = checkUnit(valuesToCheck[1].toUpperCase());
