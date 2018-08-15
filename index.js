@@ -66,11 +66,6 @@ client.on('message', message => {
 			message.channel.send("Sorry, I don't recognize that command");
 		}
 	}
-	/*else if (message.content.contains("u up") || message.content.contains("uup")) {
-		message.delete();
-		message.channel.send("Don't say that.");
-
-	}*/
 });
 
 
