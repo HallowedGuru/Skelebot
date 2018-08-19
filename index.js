@@ -8,25 +8,6 @@ client.on('ready', () => {
 client.login(process.env.BOT_TOKEN);
 
 var fs = require("fs");
-var fx = require("money");
-
- $.getJSON(
-    	// NB: using Open Exchange Rates here, but you can use any source!
-        'https://openexchangerates.org/api/latest.json?app_id=2e5fb40bc0d94bbd908e837120314da5',
-        function(data) {
-            // Check money.js has finished loading:
-            if ( typeof fx !== "undefined" && fx.rates ) {
-                fx.rates = data.rates;
-                fx.base = data.base;
-            } else {
-                // If not, apply to fxSetup global:
-                var fxSetup = {
-                    rates : data.rates,
-                    base : data.base
-                }
-            }
-        }
-    );
 
 client.on('message', message => {
 	if (message.content.startsWith("!skel ")) {
