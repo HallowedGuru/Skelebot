@@ -8,6 +8,25 @@ client.on('ready', () => {
 client.login(process.env.BOT_TOKEN);
 
 var fs = require("fs");
+var fx = require("money");
+
+ $.getJSON(
+    	// NB: using Open Exchange Rates here, but you can use any source!
+        'https://openexchangerates.org/api/latest.json?app_id=2e5fb40bc0d94bbd908e837120314da5',
+        function(data) {
+            // Check money.js has finished loading:
+            if ( typeof fx !== "undefined" && fx.rates ) {
+                fx.rates = data.rates;
+                fx.base = data.base;
+            } else {
+                // If not, apply to fxSetup global:
+                var fxSetup = {
+                    rates : data.rates,
+                    base : data.base
+                }
+            }
+        }
+    );
 
 client.on('message', message => {
 	if (message.content.startsWith("!skel ")) {
@@ -59,8 +78,14 @@ client.on('message', message => {
 			var values = command.substring(8).split(" to ");
 			var checked = checkConversionInput(values);
 			message.channel.send("Converting " +  checked[0] + " " + checked[1].toLowerCase() + " to " + checked[2].toLowerCase() + "...");
-			var converted = convert(checked[0], checked[1], checked[2]);
+			var converted = unitConvert(checked[0], checked[1], checked[2]);
 			message.channel.send(checked[0] + " " + checked[1].toLowerCase() + " is " + converted + " " + checked[2].toLowerCase());
+		}
+		else if (command.startsWith("exchange ")) {
+			var values = command.substring(8).split(" to ");
+			var checked = checkExchangeInput(values);
+			var exchanged = fx.convert(checked[0], {from: checked[1], to: checked[2]});
+			message.channel.send(checked[0] + " " + checked[1] + " is " + exchanged + " " + checked[2]);
 		}
 		else {
 			message.channel.send("Sorry, I don't recognize that command");
@@ -133,8 +158,48 @@ function checkUnit(unitToCheck) {
 	}
 }
 
+function checkExchangeInput(valuesToCheck) {
+	if (valuesToCheck.length == 2) {
+		if ((valuesToCheck[0].match(/^\d/) && valuesToCheck[0].charAt(valuesToCheck[0].length-1).match(/\w/)) && 
+			(valuesToCheck[1].charAt(valuesToCheck[1].length-1).match(/\w/))) {
+			var fromCurrency = checkCurrency(valuesToCheck[0].replace(/\d+/g, '').replace(/\W+/g, '').replace(/\s+/g, '').toUpperCase());
+			var toCurrency = checkCurrency(valuesToCheck[1].toUpperCase());
+			var value  = valuesToCheck[0].replace(/[a-zA-Z]+/g, '').replace(/\s+/g, '');
+			var set = [value, fromCurrency, toCurrency];
+			return set;
+		}
+		else {
+			return "F";
+		}
+	}
+	else {
+		return "V";
+	}
+}
+
+function checkCurrency(currencyToCheck) {
+	var validCurrencyTypes = new Map();
+	validCurrencyTypes.set("USD", ["USD", "DOLLAR", "DOLLARS"]);
+	validCurrencyTypes.set("EUR", ["EUR", "EURO", "EUROS"]);
+	validCurrencyTypes.set("GBP", ["GBP", "POUND", "POUNDS"]);
+	
+	var valid = false;
+	for (var currencyType of validCurrencyTypes.values()) {
+		for (const currency of currencyType) {
+			if (currencyToCheck === currency) {
+				valid = true;
+				return getKeyByValue(validCurrencyTypes, currencyType);
+			}
+		}
+	}
+	if (valid = false) {
+		return "Currency not recognized";
+	}
+}
+	
+
 //Performs conversion of the provided value from the fromUnit to the toUnit
-function convert(value, fromUnit, toUnit) {
+function unitConvert(value, fromUnit, toUnit) {
 	var valid = true;
 	var converted = value;
 	switch(fromUnit) {
