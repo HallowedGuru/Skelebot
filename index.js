@@ -39,7 +39,7 @@ client.on('message', message => {
 		      			},
 		      			{
 		        			"name": "units",
-		        			"value": "This command a full list of valid units for the convert command.\n__Example:__```!skel units```"
+		        			"value": "This command provides a full list of valid units for the convert command.\n__Example:__```!skel units```"
 		      			}
 	    			]
   				}
