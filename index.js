@@ -18,7 +18,7 @@ client.on('message', message => {
 			message.channel.send({
   				"embed": {
 	    			"title": "How to use Skelebot",
-	    			"description": "Using Skelbot is simple. Just type '!skel' followed by the desired command.\n\nBelow is a list of Skelebot's commands and how to use them, as well as some examples of their use.",
+	    			"description": "Using Skelebot is simple. Just type '!skel' followed by the desired command.\n\nBelow is a list of Skelebot's commands and how to use them, as well as some examples of their use.",
 	    			"color": 16777215,
 	    			"fields": [
 	  					{
@@ -35,7 +35,7 @@ client.on('message', message => {
 		      			},
 		      			{
 		        			"name": "convert",
-		        			"value": "This command converts a provided value form one unit to another.\n__Examples:__```!skel convert 25 meters to feet\n!skel convert 100 mph to km/h\n!skel convert 30C to F```"
+		        			"value": "This command converts a provided value from one unit to another.\n__Examples:__```!skel convert 25 meters to feet\n!skel convert 100 mph to km/h\n!skel convert 30C to F```"
 		      			},
 		      			{
 		        			"name": "units",
