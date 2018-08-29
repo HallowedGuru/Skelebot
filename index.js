@@ -13,8 +13,37 @@ client.on('message', message => {
 	if (message.content.startsWith("!skel ")) {
 		var command = message.content.substring(6).trim().toLowerCase();
 		if (command === "help") {
-			var help_data = fs.readFileSync("help.txt").toString();
-			message.channel.send(help_data);
+			/*var help_data = fs.readFileSync("help.txt").toString();
+			message.channel.send(help_data);*/
+			message.channel.send({
+  				"embed": {
+	    			"title": "How to use Skelebot",
+	    			"description": "Using Skelbot is simple. Just type '!skel' followed by the desired command.\n\nBelow is a list of Skelebot's commands and how to use them, as well as some examples of their use.",
+	    			"color": 16777215,
+	    			"fields": [
+	  					{
+	        				"name": "random",
+		        			"value": "This command generates a random number from a provided range.\n__Example:__```!skel random 1, 10```"
+		      			},
+		      			{
+		        			"name": "coinflip",
+		        			"value": "This command flips a coin, returning either Heads or Tails.\n__Example:__```!skel coinflip```"
+		      			},
+		      			{
+		        			"name": "pick",
+		        			"value": "This command picks a random item from a provided list.\n__Example:__```!skel pick thing, another thing, yet another thing```"
+		      			},
+		      			{
+		        			"name": "convert",
+		        			"value": "This command converts a provided value form one unit to another.\n__Examples:__```!skel convert 25 meters to feet\n!skel convert 100 mph to km/h\n!skel convert 30C to F```"
+		      			},
+		      			{
+		        			"name": "units",
+		        			"value": "This command a full list of valid units for the convert command.\n__Example:__```!skel units```"
+		      			}
+	    			]
+  				}
+			});
 		}
 		else if (command === "units") {
 			var units_data = fs.readFileSync("units.txt").toString();
