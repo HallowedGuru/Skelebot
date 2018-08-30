@@ -46,8 +46,37 @@ client.on('message', message => {
 			});
 		}
 		else if (command === "units") {
-			var units_data = fs.readFileSync("units.txt").toString();
-			message.channel.send(units_data);
+			/*var units_data = fs.readFileSync("units.txt").toString();
+			message.channel.send(units_data);*/
+			message.channel.send({
+  				"embed": {
+    				"title": "Valid Units",
+    				"description": "Below is a list of valid units for the convert command.",
+    				"color": 16777215,
+    				"fields": [
+      					{
+        					"name": "__Distance__",
+        					"value": "-**Millimeters:** Can be written as mm, millimeter, or millimeters\n-**Centimeters:** Can be written as cm, centimeter, or centimeters\n-**Meters:** Can be written as m, meter, or meters\n-**Kilometers:** Can be written as km, kilometer, or kilometers\n**-Inches:** Can be written as in, inch, or inches\n-**Feet:** Can be written as ft, foot, or feet\n-**Miles:** Can be written as mi, mile, or miles"
+      					},
+      					{
+        					"name": "__Velocity__",
+        					"value": "-**Kilometers Per Hour:** Can be written as km/h, kmph, kilometer per hour, or kilometers per hour\n-**Miles Per Hour:** Can be written as mi/h, mph, miph, mile per hour, or miles per hour\n-**Knots:** Can be written as kt, knot, or knots"
+      					},
+      					{
+        					"name": "__Weight__",
+        					"value": "-**Kilograms:** Can be written as kg, kilogram, or kilograms\n-**Pounds:** Can be written as lb, lbs, pound, or pounds"
+      					},
+      					{
+        					"name": "__Temperature__",
+        					"value": "-**Celsius:** Can be written as c, celsius, or centigrade\n-**Fahrenheit:** Can be written as f or fahrenheit\n-**Kelvin:** Can be written as k or kelvin"
+      					},
+      					{
+        					"name": "Note:",
+        					"value": "Units provided to the 'convert' command are *not* case sensitive. They can be all caps, all lower case, or any combination."
+      					}
+    				]
+  				}
+			});
 		}
 		else if (command === "spook") {
 			message.channel.send("https://www.youtube.com/watch?v=XTgFtxHhCQ0");
