@@ -64,7 +64,11 @@ client.on('message', message => {
       					},
       					{
         					"name": "__Weight__",
-        					"value": "-**Kilograms:** Can be written as kg, kilogram, or kilograms\n-**Pounds:** Can be written as lb, lbs, pound, or pounds"
+        					"value": "-**Kilograms:** Can be written as kg, kilogram, or kilograms\n-**Grams:** Can be written as g, gram, or grams\n-**Pounds:** Can be written as lb, lbs, pound, or pounds"
+      					},
+      					{
+      						"name":"__Volume__",
+      						"value":"-**Gallons:** Can be written as gl, gallon, or gallons\n-**Liters:** Can be written as l, liter, liters, litre, or liters"
       					},
       					{
         					"name": "__Temperature__",
