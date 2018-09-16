@@ -68,7 +68,7 @@ client.on('message', message => {
       					},
       					{
       						"name":"__Volume__",
-      						"value":"-**Gallons:** Can be written as gl, gallon, or gallons\n-**Liters:** Can be written as l, liter, liters, litre, or liters"
+      						"value":"-**Gallons:** Can be written as gl, gallon, or gallons\n-**Liters:** Can be written as l, liter, liters, litre, or litres"
       					},
       					{
         					"name": "__Temperature__",
