@@ -229,7 +229,6 @@ function unitConvert(value, fromUnit, toUnit) {
 					break;
 				default:
 					valid = false;
-
 			}
 			break;
 		case "MILLIMETERS":
@@ -252,6 +251,8 @@ function unitConvert(value, fromUnit, toUnit) {
 				case "MILES":
 					converted *= 0.0000000621371;
 					break;
+				default:
+					valid = false;
 			}
 			break;
 		case "CENTIMETERS":
@@ -274,6 +275,8 @@ function unitConvert(value, fromUnit, toUnit) {
 				case "MILES":
 					converted *= 0.000000621371;
 					break;
+				default:
+					valid = false;
 			}
 			break;
 		case "KILOMETERS":
@@ -293,6 +296,8 @@ function unitConvert(value, fromUnit, toUnit) {
 				case "MILES":
 					converted *= 0.621371;
 					break;
+				default:
+					valid = false;
 			}
 			break;
 		case "INCHES":
@@ -315,6 +320,8 @@ function unitConvert(value, fromUnit, toUnit) {
 				case "MILES":
 					converted *= 0.0000157828;
 					break;
+				default:
+					valid = false;
 			}
 			break;
 		case "FEET":
@@ -337,6 +344,8 @@ function unitConvert(value, fromUnit, toUnit) {
 				case "MILES":
 					converted *= 0.000189394;
 					break;
+				default:
+					valid = false;
 			}
 			break;
 		case "MILES":
@@ -359,6 +368,8 @@ function unitConvert(value, fromUnit, toUnit) {
 				case "FEET":
 					converted *= 5280;
 					break;
+				default:
+					valid = false;
 			}
 			break;
 		case "FAHRENHEIT":
@@ -369,6 +380,8 @@ function unitConvert(value, fromUnit, toUnit) {
 				case "KELVIN":
 					converted = (converted + 459.67)*(5/9);
 					break;
+				default:
+					valid = false;
 			}
 			break;
 		case "CELSIUS":
@@ -379,6 +392,8 @@ function unitConvert(value, fromUnit, toUnit) {
 				case "KELVIN":
 					converted += 273.15;
 					break;
+				default:
+					valid = false;
 			}
 			break;
 		case "KELVIN":
@@ -389,6 +404,8 @@ function unitConvert(value, fromUnit, toUnit) {
 				case "CELSIUS":
 					converted -= 273.15;
 					break;
+				default:
+					valid = false;
 			}
 			break;
 		case "KILOGRAMS":
@@ -399,6 +416,8 @@ function unitConvert(value, fromUnit, toUnit) {
 				case "POUNDS":
 					converted *= 2.20462;
 					break;
+				default:
+					valid = false;
 			}
 			break;
 		case "GRAMS":
@@ -409,6 +428,8 @@ function unitConvert(value, fromUnit, toUnit) {
 				case "POUNDS":
 					converted *= 0.00220462;
 					break;
+				default:
+					valid = false;
 			}
 			break;
 		case "POUNDS":
@@ -419,6 +440,8 @@ function unitConvert(value, fromUnit, toUnit) {
 				case "KILOGRAMS":
 					converted *= 0.453592;
 					break;
+				default:
+					valid = false;
 			}
 			break;
 		case "KILOMETES PER HOUR":
@@ -429,6 +452,8 @@ function unitConvert(value, fromUnit, toUnit) {
 				case "KNOTS":
 					converted *= 0.539957;
 					break;
+				default:
+					valid = false;
 			}
 			break;
 		case "MILES PER HOUR":
@@ -439,6 +464,8 @@ function unitConvert(value, fromUnit, toUnit) {
 				case "KNOTS":
 					converted *= 0.868976;
 					break;
+				default:
+					valid = false;
 			}
 			break;
 		case "KNOTS":
@@ -449,6 +476,8 @@ function unitConvert(value, fromUnit, toUnit) {
 				case "MILES PER HOUR":
 					converted *= 1.15078;
 					break;
+				default:
+					valid = false;
 			}
 			break;
 	}
