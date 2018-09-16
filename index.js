@@ -114,11 +114,15 @@ client.on('message', message => {
 			message.channel.send("I pick " + pickResult);
 		}
 		else if (command.startsWith("convert ")) {
-			var values = command.substring(8).split(" to ");
-			var checked = checkConversionInput(values);
-			message.channel.send("Converting " +  checked[0] + " " + checked[1].toLowerCase() + " to " + checked[2].toLowerCase() + "...");
-			var converted = unitConvert(checked[0], checked[1], checked[2]);
-			message.channel.send(checked[0] + " " + checked[1].toLowerCase() + " is " + converted + " " + checked[2].toLowerCase());
+			try {
+				var values = command.substring(8).split(" to ");
+				var checked = checkConversionInput(values);
+				message.channel.send("Converting " +  checked[0] + " " + checked[1].toLowerCase() + " to " + checked[2].toLowerCase() + "...");
+				var converted = unitConvert(checked[0], checked[1], checked[2]);
+				message.channel.send(checked[0] + " " + checked[1].toLowerCase() + " is " + converted + " " + checked[2].toLowerCase());
+			} catch (Exception e) {
+				message.channel.send("Invalid conversion");
+			}
 		}
 		else {
 			message.channel.send("Sorry, I don't recognize that command");
