@@ -177,6 +177,7 @@ function checkUnit(unitToCheck) {
 	validUnitTypes.set("FEET", ["FT", "FOOT", "FEET"]);
 	validUnitTypes.set("MILES", ["MI", "MILE", "MILES"]);
 	validUnitTypes.set("GALLONS", ["GL", "GALLON", "GALLONS"]);
+	validUnitTypes.set("LITERS", ["L", "LITER", "LITERS", "LITRE", "LITRES"]);
 	validUnitTypes.set("FAHRENHEIT", ["F", "FAHRENHEIT"]);
 	validUnitTypes.set("CELSIUS", ["C", "CELSIUS", "CENTIGRADE"]);
 	validUnitTypes.set("KELVIN", ["K", "KELVIN"]);
@@ -367,6 +368,24 @@ function unitConvert(value, fromUnit, toUnit) {
 					break;
 				case "FEET":
 					converted *= 5280;
+					break;
+				default:
+					valid = false;
+			}
+			break;
+		case "GALLONS":
+			switch(toUnit) {
+				case "LITERS":
+					converted *= 3.78541;
+					break;
+				default:
+					valid = false;
+			}
+			break;
+		case "LITERS":
+			switch(toUnit) {
+				case "GALLONS":
+					converted *= 0.264172;
 					break;
 				default:
 					valid = false;
