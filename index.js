@@ -119,9 +119,14 @@ client.on('message', message => {
 				var checked = checkConversionInput(values);
 				message.channel.send("Converting " +  checked[0] + " " + checked[1].toLowerCase() + " to " + checked[2].toLowerCase() + "...");
 				var converted = unitConvert(checked[0], checked[1], checked[2]);
-				message.channel.send(checked[0] + " " + checked[1].toLowerCase() + " is " + converted + " " + checked[2].toLowerCase());
+				if (converted == false) {
+					message.channel.send("Not a valid conversion");
+				}
+				else {
+					message.channel.send(checked[0] + " " + checked[1].toLowerCase() + " is " + converted + " " + checked[2].toLowerCase());
+				}
 			} catch (ex) {
-				message.channel.send("Invalid conversion");
+				message.channel.send("Not a valid conversion");
 			}
 		}
 		else {
@@ -447,7 +452,12 @@ function unitConvert(value, fromUnit, toUnit) {
 			}
 			break;
 	}
-	return converted;
+	if (!valid) {
+		return false;
+	}
+	else { 
+		return converted;
+	}
 }
 
 //Gets the key of a key-value pair from a provided value
