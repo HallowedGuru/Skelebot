@@ -120,7 +120,7 @@ client.on('message', message => {
 				message.channel.send("Converting " +  checked[0] + " " + checked[1].toLowerCase() + " to " + checked[2].toLowerCase() + "...");
 				var converted = unitConvert(checked[0], checked[1], checked[2]);
 				message.channel.send(checked[0] + " " + checked[1].toLowerCase() + " is " + converted + " " + checked[2].toLowerCase());
-			} catch (Exception e) {
+			} catch (ex) {
 				message.channel.send("Invalid conversion");
 			}
 		}
