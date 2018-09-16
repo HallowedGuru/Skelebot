@@ -167,11 +167,12 @@ function checkUnit(unitToCheck) {
 	validUnitTypes.set("INCHES", ["IN", "INCH", "INCHES"]);
 	validUnitTypes.set("FEET", ["FT", "FOOT", "FEET"]);
 	validUnitTypes.set("MILES", ["MI", "MILE", "MILES"]);
-	validUnitTypes.set("GALLONS", ["G", "GALLON", "GALLONS"]);
+	validUnitTypes.set("GALLONS", ["GL", "GALLON", "GALLONS"]);
 	validUnitTypes.set("FAHRENHEIT", ["F", "FAHRENHEIT"]);
 	validUnitTypes.set("CELSIUS", ["C", "CELSIUS", "CENTIGRADE"]);
 	validUnitTypes.set("KELVIN", ["K", "KELVIN"]);
 	validUnitTypes.set("KILOGRAMS", ["KG", "KILOGRAM", "KILOGRAMS"]);
+	validUnitTypes.set("GRAMS", ["G", "GRAM", "GRAMS"]);
 	validUnitTypes.set("POUNDS", ["LB", "LBS", "POUND", "POUNDS"]);
 	validUnitTypes.set("KILOMETERS PER HOUR", ["KM/H", "KMPH", "KILOMETER PER HOUR", "KILOMETERS PER HOUR"]);
 	validUnitTypes.set("MILES PER HOUR", ["MI/H", "MPH", "MIPH", "MILE PER HOUR", "MILES PER HOUR"]);
@@ -383,13 +384,29 @@ function unitConvert(value, fromUnit, toUnit) {
 			break;
 		case "KILOGRAMS":
 			switch(toUnit) {
+				case "GRAMS":
+					converted *= 1000;
+					break;
 				case "POUNDS":
 					converted *= 2.20462;
 					break;
 			}
 			break;
+		case "GRAMS":
+			switch(toUnit) {
+				case "KILOGRAMS":
+					converted *= 0.001;
+					break;
+				case "POUNDS":
+					converted *= 0.00220462;
+					break;
+			}
+			break;
 		case "POUNDS":
 			switch(toUnit) {
+				case "GRAMS":
+					converted *= 453.592;
+					break;
 				case "KILOGRAMS":
 					converted *= 0.453592;
 					break;
