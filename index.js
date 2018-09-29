@@ -96,9 +96,14 @@ client.on('message', message => {
 		}
 		else if (command.startsWith("avatar ")) {
 			try {
-				var user = message.mentions.first();
+				//var user = message.mentions.first();
 				//message.channel.send(command.substring(7).trim());
-				message.channel.send(user.avatarURL);
+				//message.channel.send(user.avatarURL);
+				var user = message.mentions.first();
+    				let embed = new Discord.RichEmbed()
+  						.setImage(user.avatarURL)
+  						.setColor('#275BF0')
+				message.channel.send(embed)
 			} catch (ex) {
 				message.channel.send("User not found");
 			}
