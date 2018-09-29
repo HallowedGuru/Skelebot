@@ -94,6 +94,14 @@ client.on('message', message => {
 		else if (command.startsWith(("ily"))) {
 			message.reply("ily2");
 		}
+		else if (command.startsWith("avatar ")) {
+			try {
+				var user = client.fetchUser(command.substring(7).trim());
+				message.channel.send(user.avatarURL);
+			} catch (ex) {
+				message.channel.send("User not found");
+			}
+		}
 		else if (command.startsWith("random ")) {
 			var values = command.substring(7).split(", ");
 			message.channel.send("Generating a random number between " + values[0] + " and " + values[1] + "...");
