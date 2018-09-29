@@ -131,7 +131,7 @@ client.on('message', message => {
 				var checked = checkConversionInput(values);
 				message.channel.send("Converting " +  checked[0] + " " + checked[1].toLowerCase() + " to " + checked[2].toLowerCase() + "...");
 				var converted = unitConvert(checked[0], checked[1], checked[2]);
-				if (converted == false) {
+				if (converted === false) {
 					message.channel.send("Not a valid conversion");
 				}
 				else {
