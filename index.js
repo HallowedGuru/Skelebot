@@ -467,7 +467,7 @@ function unitConvert(value, fromUnit, toUnit) {
 					valid = false;
 			}
 			break;
-		case "KILOMETES PER HOUR":
+		case "KILOMETERS PER HOUR":
 			switch(toUnit) {
 				case "MILES PER HOUR":
 					converted *= 0.621371;
