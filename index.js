@@ -406,10 +406,20 @@ function unitConvert(value, fromUnit, toUnit) {
 		case "FAHRENHEIT":
 			switch(toUnit) {
 				case "CELSIUS":
-					converted = (converted - 32)*(5/9);
+					if ((converted - 32) != 0) {
+						converted = (converted - 32)*(5/9);
+					}
+					else {
+						converted = 0;
+					}
 					break;
 				case "KELVIN":
-					converted = (converted + 459.67)*(5/9);
+					if ((converted + 459.67) != 0) {
+						converted = (converted + 459.67)*(5/9);
+					}
+					else {
+						converted = 0;
+					}
 					break;
 				default:
 					valid = false;
