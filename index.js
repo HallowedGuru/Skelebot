@@ -98,7 +98,7 @@ client.on('message', message => {
 			try {
 				var user = message.mentions.first();
 				//message.channel.send(command.substring(7).trim());
-				message.channel.send(user.avatarURL());
+				message.channel.send(user.avatarURL);
 			} catch (ex) {
 				message.channel.send("User not found");
 			}
