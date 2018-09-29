@@ -99,7 +99,7 @@ client.on('message', message => {
 				//var user = message.mentions.first();
 				//message.channel.send(command.substring(7).trim());
 				//message.channel.send(user.avatarURL);
-				var user = message.mentions.first();
+				var user = message.mentions.usres.first();
     				let embed = new Discord.RichEmbed()
   						.setImage(user.avatarURL)
   						.setColor('#275BF0')
