@@ -406,7 +406,7 @@ function unitConvert(value, fromUnit, toUnit) {
 		case "FAHRENHEIT":
 			switch(toUnit) {
 				case "CELSIUS":
-					converted = (converted - 32)/1.8;
+					converted = (converted - 32)*(5/9);
 					break;
 				case "KELVIN":
 					converted = (converted + 459.67)*(5/9);
