@@ -97,7 +97,8 @@ client.on('message', message => {
 		else if (command.startsWith("avatar ")) {
 			try {
 				var user = client.fetchUser(command.substring(7).trim());
-				message.channel.send(user.avatarURL());
+				message.channel.send(command.substring(7).trim());
+				//message.channel.send(user.avatarURL());
 			} catch (ex) {
 				message.channel.send("User not found");
 			}
