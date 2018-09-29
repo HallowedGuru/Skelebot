@@ -155,7 +155,7 @@ function checkConversionInput(valuesToCheck) {
 			(valuesToCheck[1].charAt(valuesToCheck[1].length-1).match(/\w/))) {
 			var fromUnit = checkUnit(valuesToCheck[0].replace(/\d+/g, '').replace(/\s+/g, '').toUpperCase());
 			var toUnit = checkUnit(valuesToCheck[1].toUpperCase());
-			var value  = valuesToCheck[0].replace(/[a-zA-Z]+/g, '').replace(/\s+/g, '');
+			var value  = valuesToCheck[0].replace(/[a-zA-Z]+/g, '').replace(/(\/)+g/).replace(/\s+/g, '');
 			var set = [value, fromUnit, toUnit];
 			return set;
 		}
