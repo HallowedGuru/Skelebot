@@ -406,13 +406,8 @@ function unitConvert(value, fromUnit, toUnit) {
 					}
 					break;
 				case "KELVIN":
-					if ((converted + 459.67) != 0) {
-						converted += 459.67;
-						converted *= 0.5555555555;
-					}
-					else {
-						converted = 0;
-					}
+					converted += 459.67;
+					converted *= 0.5555555555;
 					break;
 				default:
 					valid = false;
