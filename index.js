@@ -407,8 +407,8 @@ function unitConvert(value, fromUnit, toUnit) {
 					break;
 				case "KELVIN":
 					if ((converted + 459.67) != 0) {
-						converted = (converted + 459.67);
-						converted *= (5/9);
+						converted += 459.67;
+						converted *= 0.5555555555;
 					}
 					else {
 						converted = 0;
@@ -433,7 +433,7 @@ function unitConvert(value, fromUnit, toUnit) {
 		case "KELVIN":
 			switch(toUnit) {
 				case "FAHRENHEIT":
-					converted = (converted * 5/9) - 459.67;
+					converted = (converted * (5/9)) - 459.67;
 					break;
 				case "CELSIUS":
 					converted -= 273.15;
