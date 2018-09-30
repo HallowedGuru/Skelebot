@@ -210,7 +210,7 @@ function checkUnit(unitToCheck) {
 //Performs conversion of the provided value from the fromUnit to the toUnit
 function unitConvert(value, fromUnit, toUnit) {
 	var valid = true;
-	var converted = value;
+	var converted = parseInt(value);
 	switch(fromUnit) {
 		case "METERS":
 			switch (toUnit) {
