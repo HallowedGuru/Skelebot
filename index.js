@@ -407,7 +407,8 @@ function unitConvert(value, fromUnit, toUnit) {
 					break;
 				case "KELVIN":
 					if ((converted + 459.67) != 0) {
-						converted = ((converted + 459.67))*(5/9);
+						converted = (converted + 459.67);
+						converted *= (5/9);
 					}
 					else {
 						converted = 0;
