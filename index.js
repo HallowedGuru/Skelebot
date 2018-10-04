@@ -95,7 +95,7 @@ client.on('message', message => {
 			message.reply("ily2");
 		}
 		else if (message.content.includes("don't @ me") || message.content.includes("dont @ me")) {
-			message.reply("");
+			message.reply("aldjasl");
 		}
 		else if (command.startsWith("random ")) {
 			var values = command.substring(7).split(", ");
