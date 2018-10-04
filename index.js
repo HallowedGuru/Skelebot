@@ -91,7 +91,7 @@ client.on('message', message => {
 		else if (command === "freak") {
 			message.channel.send("https://www.youtube.com/watch?v=pdQiSGb4Luw");
 		}
-		else if (command === "harass") {
+		else if (command.startsWith("harass")) {
 			try {
 				var member = message.mentions.members.first();
 				member.send("fuck you");
