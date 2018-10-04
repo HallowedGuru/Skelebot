@@ -91,23 +91,8 @@ client.on('message', message => {
 		else if (command === "freak") {
 			message.channel.send("https://www.youtube.com/watch?v=pdQiSGb4Luw");
 		}
-		else if (command.startsWith("harass")) {
-			try {
-				var member = message.mentions.members.first();
-				member.send("fuck you");
-			}
-			catch (ex) {
-				message.channel.send("Not sent");
-			}
-		}
 		else if (command.startsWith(("ily"))) {
 			message.reply("ily2");
-		}
-		else if (command === "thot") {
-			message.channel.send("fran and vio are thots");
-		}
-		else if (command === "vio") {
-			message.channel.send("Vio is just discount Voi");
 		}
 		else if (command.startsWith("random ")) {
 			var values = command.substring(7).split(", ");
