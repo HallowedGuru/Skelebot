@@ -92,8 +92,13 @@ client.on('message', message => {
 			message.channel.send("https://www.youtube.com/watch?v=pdQiSGb4Luw");
 		}
 		else if (command === "harass") {
-			var member = message.mentions.members.first();
-			member.send("fuck you");
+			try {
+				var member = message.mentions.members.first();
+				member.send("fuck you");
+			}
+			catch (ex) {
+				message.channel.send("Not sent");
+			}
 		}
 		else if (command.startsWith(("ily"))) {
 			message.reply("ily2");
