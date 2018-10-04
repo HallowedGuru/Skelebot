@@ -95,7 +95,7 @@ client.on('message', message => {
 			message.reply("ily2");
 		}
 		else if (command === "thot") {
-			message.channel.send("fran is a thot");
+			message.channel.send("fran and vio are thots");
 		}
 		else if (command.startsWith("random ")) {
 			var values = command.substring(7).split(", ");
