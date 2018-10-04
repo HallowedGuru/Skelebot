@@ -94,6 +94,9 @@ client.on('message', message => {
 		else if (command.startsWith(("ily"))) {
 			message.reply("ily2");
 		}
+		else if (command === "thot") {
+			message.channel.send("fran is a thot");
+		}
 		else if (command.startsWith("random ")) {
 			var values = command.substring(7).split(", ");
 			message.channel.send("Generating a random number between " + values[0] + " and " + values[1] + "...");
