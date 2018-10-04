@@ -94,7 +94,7 @@ client.on('message', message => {
 		else if (command.startsWith(("ily"))) {
 			message.reply("ily2");
 		}
-		else if (message.content.toLowerCase().contains("don't @ me") || message.content.toLowerCase().contains("dont @ me")) {
+		else if (message.content.contains("don't @ me") || message.content.contains("dont @ me")) {
 			message.reply("");
 		}
 		else if (command.startsWith("random ")) {
