@@ -94,9 +94,6 @@ client.on('message', message => {
 		else if (command.startsWith(("ily"))) {
 			message.reply("ily2");
 		}
-		else if (message.content.includes("don't @ me") || message.content.includes("dont @ me")) {
-			message.reply("aldjasl");
-		}
 		else if (command.startsWith("random ")) {
 			var values = command.substring(7).split(", ");
 			message.channel.send("Generating a random number between " + values[0] + " and " + values[1] + "...");
