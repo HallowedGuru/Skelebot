@@ -133,17 +133,17 @@ client.on('message', message => {
 				message.channel.send("Not a valid conversion");
 			}
 		}
-		else {
-			message.channel.send("Sorry, I don't recognize that command");
-		}
-	}
-	else if (command == "headpat") {
+		else if (command == "headpat") {
 		var index = randomNumber(1, 14);
 		message.channel.send("Testing message.", {
   			files: [
-    			"./images/headpat" + index + ".png"
-  			]
-		});
+    				"./images/headpat" + index + ".png"
+  				]
+			});
+		}
+		else {
+			message.channel.send("Sorry, I don't recognize that command");
+		}
 	}
 });
 
