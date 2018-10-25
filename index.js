@@ -135,7 +135,7 @@ client.on('message', message => {
 		}
 		else if (command == "headpat") {
 		var index = randomNumber(1, 14);
-		message.channel.send("", {
+		message.channel.reply("", {
   			files: [
     				"images/headpat" + index + ".gif"
   				]
