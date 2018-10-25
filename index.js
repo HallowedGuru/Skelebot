@@ -137,7 +137,7 @@ client.on('message', message => {
 		var index = randomNumber(1, 14);
 		message.channel.send("Testing message.", {
   			files: [
-    				"./images/headpat" + index + ".png"
+    				"./images/headpat" + index + ".gif"
   				]
 			});
 		}
