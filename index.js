@@ -5,7 +5,7 @@ client.on('ready', () => {
     console.log('Ready!');
 });
 
-client.login(process.env.BOT_TOKEN);
+client.login(process.env.TOKEN);
 
 var fs = require("fs");
 
